@@ -1,10 +1,10 @@
-import serial, sys
+import sys
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QLabel, QPushButton, QHBoxLayout
+from widgets import buttons
 
-# Test to make sure pyserial works
-print("pyserial OK:", serial.__version__)
+
 
 
 # ---------------  Gui  -------------------#
@@ -41,18 +41,9 @@ class Main(QMainWindow):
 
         layout.addStretch(1)
 
-        buttons = QVBoxLayout()
-        buttons.setSpacing(8)
+        self.buttons = buttons.ButtonPanel()
 
-        self.btnConnect = QPushButton("Connect")
-        self.btnLaunch = QPushButton("Launch")
-        self.btnStop = QPushButton("Stop")
-
-        buttons.addWidget(self.btnConnect)
-        buttons.addWidget(self.btnLaunch)
-        buttons.addWidget(self.btnStop)
-
-        layout.addLayout(buttons)
+        layout.addWidget(self.buttons)
 
 if __name__ == "__main__":
     win = Main()
