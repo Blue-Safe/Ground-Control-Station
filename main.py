@@ -1,9 +1,13 @@
 import sys
+
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QLabel, QPushButton, QHBoxLayout
 from widgets import buttons
 
+
+
+PI_MAC = "2C:CF:67:23:E7:0B"
 
 
 
@@ -41,7 +45,7 @@ class Main(QMainWindow):
 
         layout.addStretch(1)
 
-        self.buttons = buttons.ButtonPanel()
+        self.buttons = buttons.ButtonPanel(self)
 
         layout.addWidget(self.buttons)
 
