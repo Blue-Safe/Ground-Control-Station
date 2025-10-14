@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QPushButton
-from backend import bluetoothClient
+from backend import bluetoothServer
 
 
 class ButtonPanel(QWidget):
